@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnback"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:padding="16dp"
+                    android:src="@drawable/backimage" />
+
+                <TextView
+                    android:id="@+id/match_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="45dp"
+                    android:layout_weight="0"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+                    <ImageButton
+                        android:id="@+id/btnshare"
+                        android:padding="16dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/shareimage"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="작성자"/>
+
+                <TextView
+                    android:id="@+id/matching_title"
+                    android:padding="16dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="매칭 제목"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="정보"
+                    android:textStyle="bold"
+                    />
+
+                <TableLayout
+                    android:id="@+id/tableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="#eeeeee"
+                    android:layout_marginTop="10dp">
+
+
+
+                    <TableRow
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        //매칭 유형
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight = "1"
+                            android:src="@drawable/rivals"
+                            android:scaleType="centerInside"
+                            android:background="@color/black"/>
+
+                        //성별
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight = "1"
+                            android:src="@drawable/male"
+                            android:scaleType="centerInside"
+                            android:background="@color/black"/>
+
+                    </TableRow>
+                    <TableRow
+                        android:background="@color/black"
+                        android:layout_marginTop="30dp">
+
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_weight="1">
+
+                        //운동종목
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight = "1"
+                            android:src="@drawable/soccer"
+                            android:background="@color/black"
+                            android:scaleType="centerInside"/>
+
+
+                        //클럽(소속학과)
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight = "1"
+                            android:src="@drawable/major_coumputer"
+                            android:scaleType="centerInside"
+                            android:background="@color/black"/>
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/apply_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:padding="8dp"
+            android:text="참가신청"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/c_button_background"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

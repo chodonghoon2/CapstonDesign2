@@ -10,7 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstonProject">
         <activity
-            android:name=".yligin_page"
+            android:name=".cmatching_detail"
+            android:exported="false" />
+        <activity
+            android:name=".amyinfo"
+            android:exported="false" />
+        <activity
+            android:name=".amatchinglist"
+            android:exported="false" />
+        <activity
+            android:name=".aadd_matching"
+            android:exported="false" />
+        <activity
+            android:name=".ysignup_page"
+            android:exported="false" />
+        <activity
+            android:name=".ylogin_page"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

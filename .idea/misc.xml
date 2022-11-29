@@ -3,7 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/a_itemrecyclerview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_aadd_matching.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_amatchinglist.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_amyinfo.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_cmatching_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_yligin_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_ylogin_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_ysignup_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cchatting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_chome.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cmatch.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cmatch_add.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/c_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/c_menu_title.xml" value="0.1" />
       </map>
     </option>
   </component>
