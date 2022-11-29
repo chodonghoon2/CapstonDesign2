@@ -15,12 +15,5 @@
         android:title="매칭 추가하기"
         app:showAsAction="always"/>
 
-    <item
-        android:id="@+id/chatting_fragment"
-        android:enabled="true"
-        android:icon="@drawable/c_ic_chat"
-        android:title="채팅"
-        app:showAsAction="always"/>
-
 
 </menu>

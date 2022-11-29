@@ -113,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
         if(!USERINFO.getString("is_login", "").equals("로그인상태")){
             //getMenuInflater().inflate(R.menu.c_menu_title_navi , menu);
+            getMenuInflater().inflate(R.menu.c_menu_title_navi , menu);
         }else{
             //로그인 상태일때 들어갈 레이아웃
-            //getMenuInflater().inflate(R.menu.c_menu_title_navi , menu);
+            getMenuInflater().inflate(R.menu.c_menu_title_navi2 , menu);
         }
-        getMenuInflater().inflate(R.menu.c_menu_title_navi , menu);
         return true;
     }
 
