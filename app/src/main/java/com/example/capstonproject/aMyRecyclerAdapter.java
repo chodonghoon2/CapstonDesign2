@@ -75,7 +75,7 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
                     Context context = v.getContext();
 
                     Log.e("adapter custom", ""+match_number);
-                    Intent intent = new Intent(context, matching_detail.class);
+                    Intent intent = new Intent(context, cmatching_detail.class);
                     intent.putExtra("match_number", ""+match_number);
                     context.startActivity(intent);
                 }
