@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#81F4F5F6"
+    android:gravity="center"
+    >
+    <!--
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:layout_marginBottom="50dp"
+                android:textSize="30dp"
+                android:text = "Sports Matching"
+                android:textColor="#D3DDF6"
+                android:background="#3366DD"
+                />-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="140dp"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/y_img_login_id"
+            />
+        <EditText
+            android:id="@+id/login_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="id"
+            android:padding="10dp"
+            android:background="@drawable/y_box_border_logintext"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:layout_marginBottom="60dp"
+
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/y_img_login_pw"
+            />
+        <EditText
+            android:id="@+id/login_pw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="pw"
+            android:background="@drawable/y_box_border_logintext"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/y_box_border_login"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="100dp"
+        >
+
+        <Button
+            android:id="@+id/goSignupBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="회원가입"
+            android:textColor="#ffffff"
+            android:background="@drawable/y_box_border_signup"/>
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="아이디찾기"
+            android:textColor="#ffffff"
+            android:background="@drawable/y_box_border_signup"/>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="비밀번호찾기"
+            android:textColor="#ffffff"
+            android:background="@drawable/y_box_border_signup"/>
+    </LinearLayout>
+
+</LinearLayout>
