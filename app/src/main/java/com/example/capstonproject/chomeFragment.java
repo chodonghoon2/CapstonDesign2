@@ -25,7 +25,7 @@ public class chomeFragment extends Fragment {
     private aMyRecyclerAdapter mRecyclerAdapter;
     private ArrayList<aFriendItem> mfriendItems;
     String id, name, major;
-    Button all_match_list_btn, my_match_list_btn;
+    Button match_request_btn, all_match_list_btn, my_match_list_btn;
     Context ct;
 
     TextView  user_name, user_major;
@@ -69,7 +69,7 @@ public class chomeFragment extends Fragment {
 
         all_match_list_btn = (Button) view.findViewById(R.id.all_match_list_btn);
         my_match_list_btn = (Button) view.findViewById(R.id.my_match_list_btn);
-
+        match_request_btn = (Button) view.findViewById(R.id.jangbi_btn);
 
         user_name = (TextView) view.findViewById(R.id.user_id);
         user_name.setText(name);
@@ -112,6 +112,49 @@ public class chomeFragment extends Fragment {
 
 
 
+
+
+        match_request_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String result;
+                try{
+                    matchMap.clear();
+                    String request; //모든 매칭 정보 요청
+                    yTask ytask = new yTask("authority");
+                    result = ytask.execute("&a=1"+ "&user_id=" + id).get();
+                    //매칭번호: 참가신청자 이름, 폰번호, 학과
+                    //매칭정보 저장
+                    matchlist = result.split("/");
+                    for(String matchs : matchlist){
+                        match_tag = matchs.split(":");
+                        matchMap.put(match_tag[0], match_tag[1]);
+
+                    }
+                }catch (Exception e){
+                    Log.i("chome-allmatchlistLog", e.getMessage());
+                }
+
+
+                //매칭리스트 reload시점
+                mfriendItems.clear();
+                for(String matchs : keySet){
+                    match_value = matchMap.get(matchs);
+                    //[0] : 생성자 이름, [1]: 제목, [2]: 성별
+                    m_values = match_value.split(",");
+
+                    if(m_values[2].equals("female")) {
+
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
+                    }
+                    else {
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                    }
+                }
+                mRecyclerAdapter.setFriendList(mfriendItems);
+
+            }
+        });
 
 
         all_match_list_btn.setOnClickListener(new View.OnClickListener() {
