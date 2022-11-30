@@ -10,13 +10,13 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class cmatching_detail extends AppCompatActivity {
-    TextView textview_match_number;
+    TextView creater_id, match_title;
 
 
     private Intent intent;
     String match_number, result;
     String[] matchInformation;
-    String creater_id, match_title, exercise_type, match_type, match_time, recruit_person, match_sex, match_major;
+    String str_creater_id, str_match_title, str_exercise_type, str_match_type, str_match_time, str_recruit_person, str_match_sex, str_match_major;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +30,21 @@ public class cmatching_detail extends AppCompatActivity {
         try {
             yTask request = new yTask("matchInformation");
             result = request.execute(match_number).get();
+
             matchInformation = result.split(":")[1].split(",");
-            creater_id = matchInformation[0];
-            match_title = matchInformation[1];
-            exercise_type = matchInformation[2];
-            match_type = matchInformation[3];
-            match_time = matchInformation[4];
-            recruit_person = matchInformation[5];
-            match_sex = matchInformation[6];
-            match_major = matchInformation[7];
+            str_creater_id = matchInformation[0];
+            str_match_title = matchInformation[1];
+            str_exercise_type = matchInformation[2];
+            str_match_type = matchInformation[3];
+            str_match_time = matchInformation[4];
+            str_recruit_person = matchInformation[5];
+            str_match_sex = matchInformation[6];
+            str_match_major = matchInformation[7];
 
             Log.e("detail-customlog", "불러오기 성공");
+
+
+
 
         }catch (Exception e){
             Log.e("detail-customlog", e.getMessage());
