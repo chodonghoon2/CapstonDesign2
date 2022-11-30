@@ -18,39 +18,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/btnback"
-                    android:layout_width="45dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:padding="16dp"
-                    android:src="@drawable/backimage" />
-
-                <TextView
-                    android:id="@+id/match_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-                <LinearLayout
-                    android:layout_width="45dp"
-                    android:layout_weight="0"
-                    android:layout_height="wrap_content"
-                    android:gravity="right">
-                    <ImageButton
-                        android:id="@+id/btnshare"
-                        android:padding="16dp"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/shareimage"
-                        />
-                </LinearLayout>
-
-
-            </LinearLayout>
+                android:layout_height="50dp"
+                android:background="@color/black"
+                android:orientation="horizontal"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,114 +35,121 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:padding="16dp"
+                        android:textStyle="bold"
                         android:text="작성자"/>
+
                     <TextView
                         android:id="@+id/creater_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="16dp"
-                        />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#eeeeee">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:padding="16dp"
+                        android:textStyle="bold"
                         android:text="제목"/>
                     <TextView
                         android:id="@+id/match_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textStyle="bold"
                         android:padding="16dp"
                         />
 
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:text="정보"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <TableLayout
                     android:id="@+id/tableLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:background="#eeeeee"
-                    android:layout_marginTop="10dp">
-
+                    android:layout_marginTop="10dp"
+                    android:background="#eeeeee">
 
 
                     <TableRow
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
                         //매칭 유형
-                        <ImageView
+
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/match_type"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
+                            android:layout_weight="1"
                             android:src="@drawable/rivals"
-                            android:scaleType="centerInside"
-                            android:background="@color/black"/>
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="1dp"
+
+                            />
 
                         //성별
-                        <ImageView
+
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/match_sex"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/male"
-                            android:scaleType="centerInside"
-                            android:background="@color/black"/>
+                            android:layout_weight="1"
+                            android:background="#eeeeeee"
+                            android:src="@drawable/male" />
 
                     </TableRow>
-                    <TableRow
-                        android:background="@color/black"
-                        android:layout_marginTop="30dp">
 
+                    <TableRow android:layout_marginTop="30dp">
 
 
                     </TableRow>
 
-                    <TableRow
-                        android:layout_weight="1">
+                    <TableRow android:layout_weight="1">
 
                         //운동종목
+
                         <ImageView
                             android:id="@+id/exercise_type"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/soccer"
-                            android:background="@color/black"
-                            android:scaleType="centerInside"/>
+                            android:layout_weight="1"
+                            android:background="@color/gray"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/soccer" />
 
 
                         //클럽(소속학과)
+
                         <ImageView
                             android:id="@+id/match_major"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/major_coumputer"
+                            android:layout_weight="1"
+                            android:background="@color/gray"
                             android:scaleType="centerInside"
-                            android:background="@color/black"/>
+                            android:src="@drawable/major_coumputer" />
 
                     </TableRow>
                 </TableLayout>
