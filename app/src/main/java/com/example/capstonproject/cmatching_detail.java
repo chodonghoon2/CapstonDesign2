@@ -3,17 +3,20 @@ package com.example.capstonproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 public class cmatching_detail extends AppCompatActivity {
-    TextView creater_id, match_title;
+    TextView creater_id, match_title, match_persons, match_month, match_day, match_hour, match_minute;
     ImageView match_type, match_sex, exercise_type, match_major;
-
+    Button apply_btn;
 
     private Intent intent;
     String match_number, result;
@@ -30,14 +33,18 @@ public class cmatching_detail extends AppCompatActivity {
         Log.e("custom", ""+match_number);
 //
 
-        creater_id = findViewById(R.id.creater_id);
-        match_title = findViewById(R.id.match_title);
-        match_type = findViewById(R.id.match_type);
-        match_sex = findViewById(R.id.match_sex);
-        exercise_type = findViewById(R.id.exercise_type);
-        match_major = findViewById(R.id.match_major);
-
-
+        creater_id = (TextView)findViewById(R.id.creater_id);
+        match_title = (TextView) findViewById(R.id.match_title);
+        match_type = (ImageView) findViewById(R.id.match_type);
+        match_sex = (ImageView) findViewById(R.id.match_sex);
+        exercise_type = (ImageView) findViewById(R.id.exercise_type);
+        match_major = (ImageView) findViewById(R.id.match_major);
+        match_persons = (TextView)findViewById(R.id.match_people);
+        match_month = (TextView) findViewById(R.id.time_month);
+        match_day = (TextView) findViewById(R.id.time_day);
+        match_hour = (TextView) findViewById(R.id.time_hour);
+        match_minute = (TextView) findViewById(R.id.time_minute);
+        apply_btn = (Button) findViewById(R.id.apply_btn);
 
         try {
             yTask request = new yTask("matchInformation");
@@ -107,10 +114,42 @@ public class cmatching_detail extends AppCompatActivity {
                     break;
            }
 
+            match_persons.setText(str_recruit_person);
+
+            match_month.setText(str_match_time.substring(0, 1));
+            match_day.setText(str_match_time.substring(2, 3));
+            match_hour.setText(str_match_time.substring(4, 5));
+            match_minute.setText(str_match_time.substring(6, 7));
+
+
+
+
         }catch (Exception e){
             Log.e("detail-customlog", e.getMessage());
         }
 
+
+        apply_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
+                String user_id = USERINFO.getString("id", "");
+                try{
+                    yTask apply_request = new yTask("match_apply");
+                    String result = apply_request.execute("&a=1&match_number=" + match_number + "&user_id=" + user_id).get();
+                    if(result.equals("삽입성공")){
+                        Log.e("detailpagelog", "삽입성공");
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Log.e("detailpagelog", "삽입실패");
+
+                    }
+                }catch (Exception e){
+                    Log.e("detailpagelog", e.getMessage());
+                }
+            }
+        });
 
 
     }
