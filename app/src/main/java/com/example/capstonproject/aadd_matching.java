@@ -121,18 +121,20 @@ public class aadd_matching extends AppCompatActivity {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
 
-                str_hour = "";
-                str_minute = "";
 
                 if(hourOfDay>=10){
+                    str_hour = "";
                     str_hour += hourOfDay;
                 }else{
+                    str_hour = "";
                     str_hour += "0" + hourOfDay;
                 }
 
                 if(minute >= 10){
+                    str_minute = "";
                     str_minute += minute;
                 }else{
+                    str_minute = "";
                     str_minute += "0" + minute;
                 }
 
@@ -145,7 +147,7 @@ public class aadd_matching extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rg_btnman:
-                        str_sex = "man";
+                        str_sex = "male";
                         break;
                     case R.id.rg_btnfemale:
                         str_sex = "female";
@@ -159,10 +161,10 @@ public class aadd_matching extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rg_btnsoccer:
-                        str_exercise = "soccer";
+                        str_exercise = "축구";
                         break;
                     case R.id.rg_btnfootball:
-                        str_exercise = "football";
+                        str_exercise = "풋살";
                         break;
                 }
             }
@@ -173,10 +175,10 @@ public class aadd_matching extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rg_btn_mercenary:
-                        str_type = "merecenary";
+                        str_type = "용병";
                         break;
                     case R.id.rg_btn_rival:
-                        str_type = "rival";
+                        str_type = "상대팀";
                         break;
                 }
             }

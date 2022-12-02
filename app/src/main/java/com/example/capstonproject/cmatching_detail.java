@@ -116,10 +116,10 @@ public class cmatching_detail extends AppCompatActivity {
 
             match_persons.setText(str_recruit_person);
 
-            match_month.setText(str_match_time.substring(0, 1));
-            match_day.setText(str_match_time.substring(2, 3));
-            match_hour.setText(str_match_time.substring(4, 5));
-            match_minute.setText(str_match_time.substring(6, 7));
+            match_month.setText(str_match_time.substring(0, 2));
+            match_day.setText(str_match_time.substring(2, 4));
+            match_hour.setText(str_match_time.substring(4, 6));
+            match_minute.setText(str_match_time.substring(6));
 
 
 

@@ -340,7 +340,7 @@
                                 android:orientation="horizontal">
 
                                 <Spinner
-                                    android:id="@+id/question6"
+                                    android:id="@+id/match_major"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="학과"
@@ -382,10 +382,6 @@
             android:padding="8dp"
             android:text="작성완료" />
 
-        <Spinner
-            android:id="@+id/match_major"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>
