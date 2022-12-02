@@ -63,10 +63,10 @@ public class amatchinglist extends AppCompatActivity {
             m_values = match_value.split(",");
 
             if(m_values[2].equals("female")) {
-                mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
+                mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], false));
             }
             else {
-                mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], false));
             }
         }
         mRecyclerAdapter.setFriendList(mfriendItems);

@@ -100,10 +100,10 @@ public class chomeFragment extends Fragment {
             m_values = match_value.split(",");
 
             if(m_values[2].equals("female")) {
-                mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
+                mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], false));
             }
             else {
-                mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], false));
             }
         }
 
@@ -113,7 +113,7 @@ public class chomeFragment extends Fragment {
 
 
 
-
+//요청받은 수락/거절
         match_request_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,10 +145,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], true));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], true));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);
@@ -188,10 +188,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], false));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], false));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);
@@ -238,10 +238,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], false));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], false));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);
