@@ -4,6 +4,11 @@
     <!-- 로그인 시 화면 -->
 
     <item
+        android:id="@+id/Notice"
+        android:title="알림"
+        android:icon="@drawable/c_ic_notifications_24"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/my_info_btn"
         android:title="내정보"
         app:showAsAction="never"/>
