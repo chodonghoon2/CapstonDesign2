@@ -155,17 +155,17 @@ public class cmatching_detail extends AppCompatActivity {
 
 
 
-        try{
-            yTask member_request = new yTask("members");
-            String result = member_request.execute("&a=1&match_number=" + match_number).get();
-            String[] members = result.split("/");
-
-            ArrayAdapter<String> adapter =
-
-        }catch(Exception e){
-            Log.e("detailpagelog", e.getMessage());
-        }
-
+//        try{
+//            yTask member_request = new yTask("members");
+//            String result = member_request.execute("&a=1&match_number=" + match_number).get();
+//            String[] members = result.split("/");
+//
+//            ArrayAdapter<String> adapter =
+//
+//        }catch(Exception e){
+//            Log.e("detailpagelog", e.getMessage());
+//        }
+//
 
     }
 }

@@ -7,19 +7,19 @@
     <LinearLayout
         android:id="@+id/itemlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:padding="20dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_vertical">
             <!--이름-->
             <TextView
                 android:id="@+id/member_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:text="이름"
                 android:textSize="16sp"
@@ -43,7 +43,7 @@
                 android:maxLines="1"/>
 
             <TextView
-                android:id="@+id/meeber_phone"
+                android:id="@+id/member_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
@@ -53,6 +53,24 @@
                 android:maxLines="1"/>
         </LinearLayout>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/accept_image"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/refuse_image"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            />
     </LinearLayout>
 
     <!--구분선-->
