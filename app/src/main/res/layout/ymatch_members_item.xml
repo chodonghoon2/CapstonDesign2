@@ -15,16 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical">
-            <!--프로필 사진-->
-            <ImageView
-                android:id="@+id/profile"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/a_user"/>
-
             <!--이름-->
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/member_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -36,14 +29,25 @@
         <LinearLayout
             android:layout_weight="3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/message"
+                android:id="@+id/member_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
-                android:text="상태메시지"
+                android:text="참여자 정보"
+                android:textSize="12sp"
+                android:textColor="#444"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/meeber_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="참여자 전화번호"
                 android:textSize="12sp"
                 android:textColor="#444"
                 android:maxLines="1"/>

@@ -37,14 +37,14 @@ public class aadd_matching extends AppCompatActivity {
     chomeFragment chomeFragment;
     cmatch_addFragment cmatch_addFragment;
     cmatchFragment cmatchFragment;
-    EditText match_subject, edittext_persons, edittext_major;
+    EditText match_subject, edittext_persons;
     Button btn_ok;
     RadioGroup radio_groupsex, radio_groupexercise, radio_group_type;
-    NumberPicker match_day, match_month;
+    NumberPicker recruit_people, match_day, match_month;
     TimePicker match_time;
     Spinner match_major;
 
-    String str_sex = "", str_exercise = "", str_type = "", str_month= "", str_day= "", str_hour= "", str_minute= "", str_time= "", str_major= "";
+    String str_sex = "", str_exercise = "", str_type = "", str_month= "", str_day= "", str_hour= "", str_minute= "", str_time= "", str_major= "", str_people;
 
     ArrayList<String> majors;
     ArrayAdapter<String> adapter;
@@ -72,12 +72,12 @@ public class aadd_matching extends AppCompatActivity {
 
         //aad_matching 버튼 연결
         match_subject = (EditText) findViewById(R.id.match_subject);
-        edittext_persons = (EditText) findViewById(R.id.edittext_persons);
         match_major = (Spinner) findViewById(R.id.match_major);
         radio_groupsex = (RadioGroup) findViewById(R.id.radio_groupsex);
         btn_ok = (Button) findViewById(R.id.btn_ok);
         radio_groupexercise = (RadioGroup) findViewById(R.id.radio_groupexercise);
         radio_group_type = (RadioGroup) findViewById(R.id.radio_group_type);
+        recruit_people = (NumberPicker) findViewById(R.id.recruit_people);
         match_month = (NumberPicker) findViewById(R.id.match_month);
         match_day = (NumberPicker) findViewById(R.id.match_day);
         match_time = (TimePicker) findViewById(R.id.match_time);
@@ -85,11 +85,24 @@ public class aadd_matching extends AppCompatActivity {
         //match_major 어뎁터
         match_major.setAdapter(adapter);
 
+        //모집인원 설정
+        recruit_people.setMaxValue(11);
+        recruit_people.setMinValue(1);
+
         //매칭 날짜 설정
         match_month.setMaxValue(12);
         match_month.setMinValue(1);
         match_day.setMaxValue(31);
         match_day.setMinValue(1);
+
+
+        recruit_people.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                str_people = "";
+                str_people += newVal;
+            }
+        });
 
         match_month.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -211,7 +224,7 @@ public class aadd_matching extends AppCompatActivity {
                     StringBuilder param = new StringBuilder();
                     param.append("&a='1'," + "&match_owner=" + USERINFO.getString("id", "")
                             + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
-                            + "&match_type=" + str_type + "&match_time=" + str_time + "&match_persons=" + edittext_persons.getText()
+                            + "&match_type=" + str_type + "&match_time=" + str_time + "&match_persons=" + str_people
                             + "&match_sex=" + str_sex+ "&match_major=" + str_major);
 
                     result =  summit_task.execute(param.toString()).get();

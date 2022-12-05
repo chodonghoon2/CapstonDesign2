@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fillViewport="true">
 
@@ -20,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/black"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,13 +31,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:padding="16dp"
-                        android:textStyle="bold"
-                        android:text="작성자"/>
+                        android:text="작성자"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/creater_id"
@@ -52,104 +54,106 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#eeeeee">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:padding="16dp"
-                        android:textStyle="bold"
-                        android:text="제목"/>
+                        android:text="제목"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/match_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textStyle="bold"
                         android:padding="16dp"
-                        />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:text="정보"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <TableLayout
                     android:id="@+id/tableLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:background="#eeeeee"
-                    android:layout_marginTop="10dp">
-
+                    android:layout_marginTop="10dp"
+                    android:background="#eeeeee">
 
 
                     <TableRow
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
                         //매칭 유형
+
                         <ImageView
                             android:id="@+id/match_type"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/rivals"
+                            android:layout_weight="1"
                             android:background="@color/gray"
-                            />
+                            android:src="@drawable/rivals" />
 
                         //성별
+
                         <ImageView
                             android:id="@+id/match_sex"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/male"
+                            android:layout_weight="1"
                             android:background="@color/gray"
-                            />
-
-                    </TableRow>
-                    <TableRow
-                        android:layout_marginTop="30dp">
-
-
+                            android:src="@drawable/male" />
 
                     </TableRow>
 
-                    <TableRow
-                        android:layout_weight="1">
+                    <TableRow android:layout_marginTop="30dp">
+
+
+                    </TableRow>
+
+                    <TableRow android:layout_weight="1">
 
                         //운동종목
+
                         <ImageView
                             android:id="@+id/exercise_type"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/soccer"
+                            android:layout_weight="1"
                             android:background="@color/gray"
-                            android:scaleType="centerInside"/>
+                            android:scaleType="centerInside"
+                            android:src="@drawable/soccer" />
 
 
                         //클럽(소속학과)
+
                         <ImageView
                             android:id="@+id/match_major"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight = "1"
-                            android:src="@drawable/major_coumputer"
+                            android:layout_weight="1"
                             android:background="@color/gray"
-                            android:scaleType="centerInside"/>
+                            android:scaleType="centerInside"
+                            android:src="@drawable/major_coumputer" />
 
                     </TableRow>
                 </TableLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -158,15 +162,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
-                        android:textStyle="bold"
-                        android:text="인원"/>
+                        android:text="인원"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/match_people"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
                         android:padding="16dp"
-                        />
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -178,74 +182,102 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
-                        android:textStyle="bold"
-                        android:text="시간"/>
+                        android:text="시간"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/time_month"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:textStyle="bold"
+                        android:text="12"
                         android:textSize="16dp"
-                        android:text="12">
-                    </TextView>
+                        android:textStyle="bold"></TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="bold"
+                        android:text="월"
                         android:textSize="16dp"
-                        android:text="월"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/time_day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:text="09"
                         android:textSize="16dp"
-                        android:textStyle="bold"
-                        android:text="09"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
+                        android:text="일"
                         android:textSize="16dp"
-                        android:textStyle="bold"
-                        android:text="일"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/time_hour"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:text="13"
                         android:textSize="16dp"
-                        android:textStyle="bold"
-                        android:text="13"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:text=":"
                         android:textSize="16dp"
-                        android:textStyle="bold"
-                        android:text=":"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/time_minute"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="16dp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="bold"
-                        android:text="50"/>
+                        android:text="50"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="참여자"
+                    android:gravity="center_vertical"/>
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="5dp"
+                    android:divider="#ff0000">
+
+                </ListView>
+            </LinearLayout>
+
+
         </LinearLayout>
+
+
+
     </ScrollView>
+
+
 
 
     <LinearLayout

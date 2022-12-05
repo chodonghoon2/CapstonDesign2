@@ -185,11 +185,12 @@
                                 android:textSize="17dp"
                                 android:textStyle="bold" />
 
-                            <EditText
-                                android:id="@+id/edittext_persons"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp" />
+                            <NumberPicker
+                                android:id="@+id/recruit_people"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="30dp"
+                                />
 
                             <!--TODO : core -->
 

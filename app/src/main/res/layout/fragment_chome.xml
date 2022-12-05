@@ -19,7 +19,7 @@
             android:layout_marginTop="3dp"
             >
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -80,9 +80,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/c_home_btn_background"
-            android:text="장비 대여"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:text="매칭 관리"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/all_match_list_btn"

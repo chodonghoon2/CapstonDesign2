@@ -49,7 +49,8 @@ public class ylogin_page extends AppCompatActivity {
                         editor.putString("id", user_values[1]);
                         editor.putString("name", user_values[2]);
                         editor.putString("sex", user_values[3]);
-                        editor.putString("phone", user_values[4]);
+                        editor.putString("major", user_values[4]);
+                        editor.putString("phone", user_values[5]);
 
                         editor.putString("team", "로그인된 팀");
 

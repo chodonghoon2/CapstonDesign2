@@ -52,7 +52,6 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
         TextView name;
         TextView message;
         LinearLayout itemlayout;
-        LinearLayout OXbtns;
         Button applybtn;
         Button refusebtn;
 
@@ -62,9 +61,6 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
             profile =  itemView.findViewById(R.id.profile);
             name =  itemView.findViewById(R.id.name);
             message =  itemView.findViewById(R.id.message);
-            OXbtns = itemView.findViewById(R.id.OXbtns);
-            applybtn = itemView.findViewById(R.id.match_accept);
-            refusebtn = itemView.findViewById(R.id.match_refuse);
         }
 
         void onBind(aFriendItem item){
@@ -72,30 +68,6 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
             profile.setImageResource(item.getResourceId());
             name.setText(item.getName());
             message.setText(item.getMessage());
-
-
-
-            if(!item.OXbtns){ // my_matcing, all_matching (false)
-                OXbtns.setVisibility(View.INVISIBLE);
-            }else{
-                OXbtns.setVisibility(View.VISIBLE);
-
-                //O 버튼 클릭시
-                applybtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-
-                //X 버튼 클릭시
-                refusebtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-            }
 
 
             itemlayout.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +81,6 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
                     Log.e("adapter custom", ""+match_number);
                     Intent intent = new Intent(context, cmatching_detail.class);
                     intent.putExtra("match_number", ""+match_number);
-                    intent.putExtra("is_request", ""+item.OXbtns);
                     context.startActivity(intent);
                 }
             });

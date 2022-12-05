@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class cmatching_detail extends AppCompatActivity {
     String match_number, result;
     String[] matchInformation;
     String str_creater_id, str_match_title, str_exercise_type, str_match_type, str_match_time, str_recruit_person, str_match_sex, str_match_major;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +152,19 @@ public class cmatching_detail extends AppCompatActivity {
                 }
             }
         });
+
+
+
+        try{
+            yTask member_request = new yTask("members");
+            String result = member_request.execute("&a=1&match_number=" + match_number).get();
+            String[] members = result.split("/");
+
+            ArrayAdapter<String> adapter =
+
+        }catch(Exception e){
+            Log.e("detailpagelog", e.getMessage());
+        }
 
 
     }

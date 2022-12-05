@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         is_login = USERINFO.getString("is_login", "로그인 안됨");
         user_id = USERINFO.getString("id", "id 없음");
         user_name = USERINFO.getString("name", "이름 없음");
-        user_major = USERINFO.getString("major", "팀 없음");
+        user_major = USERINFO.getString("major", "학과 없음");
 
         //처음화면
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);

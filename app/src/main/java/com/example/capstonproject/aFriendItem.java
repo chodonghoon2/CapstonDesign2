@@ -28,7 +28,6 @@ public class aFriendItem {
         return name;
     }
 
-    public Boolean getOXbtn() {return OXbtns;}
 
     public void setMatch_number(){ this.match_number = match_number;}
 
@@ -44,5 +43,4 @@ public class aFriendItem {
         this.resourceId = resourceId;
     }
 
-    public void setOXbtn(Boolean OXbtn){this.OXbtns = OXbtn;}
 }

@@ -3,6 +3,7 @@ package com.example.capstonproject;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -111,47 +112,15 @@ public class chomeFragment extends Fragment {
 
 
 
-
+        Context ct = getContext();
 
 //요청받은 수락/거절
         match_request_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String result;
-                try{
-                    matchMap.clear();
-                    String request; //모든 매칭 정보 요청
-                    yTask ytask = new yTask("authority");
-                    result = ytask.execute("&a=1"+ "&user_id=" + id).get();
-                    //매칭번호: 참가신청자 이름, 폰번호, 학과
-                    //매칭정보 저장
-                    matchlist = result.split("/");
-                    for(String matchs : matchlist){
-                        match_tag = matchs.split(":");
-                        matchMap.put(match_tag[0], match_tag[1]);
+                Intent intent = new Intent(ct, y_requested_match.class);
 
-                    }
-                }catch (Exception e){
-                    Log.i("chome-allmatchlistLog", e.getMessage());
-                }
-
-
-                //매칭리스트 reload시점
-                mfriendItems.clear();
-                for(String matchs : keySet){
-                    match_value = matchMap.get(matchs);
-                    //[0] : 생성자 이름, [1]: 제목, [2]: 성별
-                    m_values = match_value.split(",");
-
-                    if(m_values[2].equals("female")) {
-
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], true));
-                    }
-                    else {
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], true));
-                    }
-                }
-                mRecyclerAdapter.setFriendList(mfriendItems);
+                startActivity(intent);
 
             }
         });
