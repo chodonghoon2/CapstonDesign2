@@ -56,21 +56,23 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="40dp">
         <ImageButton
+            android:id="@+id/accepted"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:src="@drawable/accept_image"
+            android:layout_height="40dp"
+            android:src="@drawable/y_ic_check_24"
+            android:background="#32CD32"
             android:layout_weight="1"
-            android:scaleType="centerInside"
-            />
+            android:scaleType="centerInside"/>
         <ImageButton
+            android:id="@+id/rejected"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:src="@drawable/refuse_image"
+            android:layout_height="40dp"
+            android:src="@drawable/y_ic_close_24"
+            android:background="#CBFF0000"
             android:layout_weight="1"
-            android:scaleType="centerInside"
-            />
+            android:scaleType="centerInside"/>
     </LinearLayout>
 
     <!--구분선-->
