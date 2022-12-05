@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CapstonProject"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".cNotice"
+            android:exported="false" />
+        <activity
             android:name=".y_requested_match"
             android:exported="false" />
         <activity
