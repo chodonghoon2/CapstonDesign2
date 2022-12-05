@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class y_requested_match extends AppCompatActivity {
 
     ListView request_list;
-
+    TextView user_name, user_major;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +20,14 @@ public class y_requested_match extends AppCompatActivity {
 
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
         String creater_id = USERINFO.getString("id", "id없음");
+        String str_user_name = USERINFO.getString("name", "이름없음");
+        String str_user_major = USERINFO.getString("major", "학과없음");
+
+        user_name = (TextView) findViewById(R.id.user_name);
+        user_major = (TextView) findViewById(R.id.user_major);
+        user_name.setText(str_user_name);
+        user_major.setText(str_user_major);
+
 
         request_list = findViewById(R.id.request_list);
         y_members_adapter adapter = new y_members_adapter();

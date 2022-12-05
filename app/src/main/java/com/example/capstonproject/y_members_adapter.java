@@ -46,13 +46,17 @@ public class y_members_adapter extends BaseAdapter {
         TextView member_name = (TextView) view.findViewById(R.id.member_name);
         TextView member_info = (TextView) view.findViewById(R.id.member_info);
         TextView member_phone = (TextView) view.findViewById(R.id.member_phone);
-        String match_number, member_id;
+
         ymatch_members member_item = members_list.get(position);
 
+        String match_number = member_item.getMatch_number();
+        String member_id = member_item.getMember_id();
         member_name.setText(member_item.getMember_name());
         member_info.setText(member_item.getMember_info());
         member_phone.setText(member_item.getMember_phone());
 
+        
+        //수락버튼 클릭시
         accept_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,9 +64,13 @@ public class y_members_adapter extends BaseAdapter {
 
                     yTask accpetTask = new yTask("match_accept");
                     //보낼 파라미터 = match_number, member_id
-                    String result = accpetTask.execute("&a=1&match_number=").get();
+                    String result = accpetTask.execute("&a=1&match_number="+ match_number+"&member_id=" + member_id).get();
                     // 결과 = 참여성공, 참여실패
                     Log.e("참여시도", result);
+
+
+
+
                     if(result.equals("참여성공")){
                         Intent intent = new Intent(ct, MainActivity.class);
                         ct.startActivity(intent);
@@ -73,6 +81,8 @@ public class y_members_adapter extends BaseAdapter {
             }
         });
 
+        
+        //거절버튼 클릭시
         refuse_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
