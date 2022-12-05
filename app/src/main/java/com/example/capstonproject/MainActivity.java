@@ -141,6 +141,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
+        }else if(id == R.id.Notice_btn) {
+            Intent intent = new Intent(getApplicationContext(), cNotice.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

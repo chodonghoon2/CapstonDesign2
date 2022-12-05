@@ -4,7 +4,7 @@
     <!-- 로그인 시 화면 -->
 
     <item
-        android:id="@+id/Notice"
+        android:id="@+id/Notice_btn"
         android:title="알림"
         android:icon="@drawable/c_ic_notifications_24"
         app:showAsAction="always"/>
