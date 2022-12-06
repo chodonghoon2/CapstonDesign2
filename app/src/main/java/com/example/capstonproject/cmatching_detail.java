@@ -137,9 +137,9 @@ public class cmatching_detail extends AppCompatActivity {
                 SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
                 String user_id = USERINFO.getString("id", "");
                 try{
-                    yTask apply_request = new yTask("match_apply");
+                    yTask apply_request = new yTask("matchApply");
                     String result = apply_request.execute("&a=1&match_number=" + match_number + "&user_id=" + user_id).get();
-                    if(result.equals("삽입성공")){
+                    if(result.equals("참가신청성공")){
                         Log.e("detailpagelog", "삽입성공");
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);

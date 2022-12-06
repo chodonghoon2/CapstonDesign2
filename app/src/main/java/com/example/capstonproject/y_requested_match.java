@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ public class y_requested_match extends AppCompatActivity {
 
             for(String requested_matchs : creat_matchs){
                 String[] mInfo = requested_matchs.split(",");
+                Log.e("additem-log", mInfo[0] + mInfo[1] + mInfo[2] + mInfo[3] + mInfo[4]);
                 adapter.addItem(mInfo[0], mInfo[1], mInfo[2], mInfo[3], mInfo[4]);
             }
 
