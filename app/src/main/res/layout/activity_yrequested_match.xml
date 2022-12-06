@@ -59,10 +59,26 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="내 매칭 참가 신청 목록"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/request_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#eeeeee">
 
 
     </ListView>
