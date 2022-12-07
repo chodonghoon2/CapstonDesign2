@@ -4,7 +4,6 @@ import android.widget.Button;
 
 public class ymatch_members {
     private String member_name, member_info, member_phone;
-    private Button accept_btn, refuse_btn;
     String match_number, member_id;
 
     public ymatch_members(String match_number, String member_id, String member_name, String member_info, String member_phone){

@@ -1,25 +1,32 @@
 package com.example.capstonproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 public class cmatching_detail extends AppCompatActivity {
-    TextView creater_id, match_title, match_persons, match_month, match_day, match_hour, match_minute;
+    TextView creater_id, match_title, match_persons, match_month, match_day, match_hour, match_minute, numberOfMember;
     ImageView match_type, match_sex, exercise_type, match_major;
     Button apply_btn;
+    ListView member_listview;
 
     private Intent intent;
+    Boolean my_match;
     String match_number, result;
     String[] matchInformation;
     String str_creater_id, str_match_title, str_exercise_type, str_match_type, str_match_time, str_recruit_person, str_match_sex, str_match_major;
@@ -30,10 +37,15 @@ public class cmatching_detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cmatching_detail);
 
+
+
         intent = getIntent();
         match_number = intent.getStringExtra("match_number");
+        my_match = intent.getBooleanExtra("is_myMatch", false);
         Log.e("custom", ""+match_number);
 //
+
+        ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
 
         creater_id = (TextView)findViewById(R.id.creater_id);
         match_title = (TextView) findViewById(R.id.match_title);
@@ -47,6 +59,9 @@ public class cmatching_detail extends AppCompatActivity {
         match_hour = (TextView) findViewById(R.id.time_hour);
         match_minute = (TextView) findViewById(R.id.time_minute);
         apply_btn = (Button) findViewById(R.id.apply_btn);
+        numberOfMember = (TextView) findViewById(R.id.numberOfMember);
+        member_listview = (ListView) findViewById(R.id.member_list);
+
 
         try {
             yTask request = new yTask("matchInformation");
@@ -124,11 +139,42 @@ public class cmatching_detail extends AppCompatActivity {
             match_minute.setText(str_match_time.substring(6));
 
 
+            //내가 참여한 매칭에서 참여자들 전화번호 조회
+            if(my_match){
+                apply_btn.setVisibility(View.INVISIBLE);
+                //어뎁터
+                y_members_adapter adapter = new y_members_adapter();
+                member_listview.setAdapter(adapter);
+
+                // 서버 요청
+                yTask phoneTask = new yTask("members_phone");
+                String phones = phoneTask.execute("&a=1&match_number="+match_number).get();
+                String[] memberlist = phones.split("/");
+                Log.e("detail-customlog", phones);
+                String NOM = "참여자 - " + memberlist.length + "명 참여중";
+                numberOfMember.setText(NOM);
+
+                for(String member : memberlist){
+                    Log.e("detail-customlog", member);
+                    //user_name, user_phone, user_major
+                    String[] memInfo = member.split(",");
+                    adapter.addItem(match_number, "", memInfo[0], memInfo[1], memInfo[2]);
+                }
+
+            }
 
 
         }catch (Exception e){
             Log.e("detail-customlog", e.getMessage());
         }
+
+        member_listview.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                scrollView.requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
 
 
         apply_btn.setOnClickListener(new View.OnClickListener() {

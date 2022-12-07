@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +47,7 @@ public class y_members_adapter extends BaseAdapter {
         TextView member_name = (TextView) view.findViewById(R.id.member_name);
         TextView member_info = (TextView) view.findViewById(R.id.member_info);
         TextView member_phone = (TextView) view.findViewById(R.id.member_phone);
+        LinearLayout responseLayout = (LinearLayout) view.findViewById(R.id.responseLayout);
 
         ymatch_members member_item = members_list.get(position);
 
@@ -55,6 +57,9 @@ public class y_members_adapter extends BaseAdapter {
         member_info.setText(member_item.getMember_info());
         member_phone.setText(member_item.getMember_phone());
 
+        if(member_id.equals("")){
+            responseLayout.setVisibility(View.GONE);
+        }
         
         //수락버튼 클릭시
         accept_btn.setOnClickListener(new View.OnClickListener() {
