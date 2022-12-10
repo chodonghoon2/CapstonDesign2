@@ -3,30 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/drawable/c_home_btn_background.xml" value="0.1355" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/a_itemrecyclerview.xml" value="0.264" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_amatchinglist.xml" value="0.1" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_amyinfo.xml" value="0.16" />
+        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_amyinfo.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_cmatching_detail.xml" value="0.2" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_cnotice.xml" value="0.2" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_main.xml" value="0.1125" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_ylogin_page.xml" value="0.1" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_yrequested_match.xml" value="0.16" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/activity_ysignup_page.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/fragment_chome.xml" value="0.1125" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/fragment_cmatch.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/fragment_cmatch_add.xml" value="0.10190217391304347" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/layout/ymatch_members_item.xml" value="0.2" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/menu/c_menu_title_navi.xml" value="0.1125" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDesign2/app/src/main/res/menu/c_menu_title_navi2.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/c_ic_arrow_back_24.xml" value="0.2685" />
+        <entry key="app/src/main/res/drawable/c_ic_notifications_24.xml" value="0.2685" />
+        <entry key="app/src/main/res/drawable/c_shape_for_circle_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shape_for_circle_button.xml" value="0.1" />
         <entry key="app/src/main/res/layout/a_itemrecyclerview.xml" value="0.1828774062816616" />
         <entry key="app/src/main/res/layout/activity_aadd_matching.xml" value="0.1828774062816616" />
         <entry key="app/src/main/res/layout/activity_amatchinglist.xml" value="0.1828774062816616" />
+        <entry key="app/src/main/res/layout/activity_amyinfo.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/activity_cmatching_detail.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_cnotice.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1828774062816616" />
+        <entry key="app/src/main/res/layout/activity_ylogin_page.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/activity_yrequested_match.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_chome.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_cmatch.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/fragment_cmatch_add.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/ymatch_members_item.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/c_menu_back_title.xml" value="0.37025641025641026" />
         <entry key="app/src/main/res/menu/c_menu_title_navi.xml" value="0.37025641025641026" />
         <entry key="app/src/main/res/menu/c_menu_title_navi2.xml" value="0.37025641025641026" />
       </map>

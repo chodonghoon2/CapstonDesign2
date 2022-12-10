@@ -207,10 +207,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], true));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], false));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], true));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], false));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);

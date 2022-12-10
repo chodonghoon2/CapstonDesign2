@@ -15,14 +15,13 @@ import com.google.android.material.navigation.NavigationBarView;
 public class amyinfo extends AppCompatActivity {
     TextView tv_name, tv_id, tv_sex, tv_tel, tv_major;
     Button reload_myinfo, btn_backtohome;
-
+    SharedPreferences USERINFO = getSharedPreferences("USERINFO",MODE_PRIVATE);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amyinfo);
-        SharedPreferences USERINFO = getSharedPreferences("USERINFO",MODE_PRIVATE);
 
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_id = (TextView) findViewById(R.id.tv_id);

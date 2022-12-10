@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +46,6 @@ public class y_members_adapter extends BaseAdapter {
         TextView member_name = (TextView) view.findViewById(R.id.member_name);
         TextView member_info = (TextView) view.findViewById(R.id.member_info);
         TextView member_phone = (TextView) view.findViewById(R.id.member_phone);
-        LinearLayout responseLayout = (LinearLayout) view.findViewById(R.id.responseLayout);
 
         ymatch_members member_item = members_list.get(position);
 
@@ -57,9 +55,6 @@ public class y_members_adapter extends BaseAdapter {
         member_info.setText(member_item.getMember_info());
         member_phone.setText(member_item.getMember_phone());
 
-        if(member_id.equals("")){
-            responseLayout.setVisibility(View.GONE);
-        }
         
         //수락버튼 클릭시
         accept_btn.setOnClickListener(new View.OnClickListener() {
@@ -95,10 +90,10 @@ public class y_members_adapter extends BaseAdapter {
 
                     yTask refuseTask = new yTask("match_refuse");
                     //보낼 파라미터 = match_number, member_id
-                    String result = refuseTask.execute("&a=1&match_number=" + match_number + "&member_id=" + member_id ).get();
+                    String result = refuseTask.execute("&a=1&match_number=").get();
                     // 결과 = 거절성공, 거절실패
                     Log.e("참여거절시도", result);
-                    if(result.equals("삭제성공")){
+                    if(result.equals("거절성공")){
                         Intent intent = new Intent(ct, MainActivity.class);
                         ct.startActivity(intent);
                     }
