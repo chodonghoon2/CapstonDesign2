@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         //처음화면
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
+        //새 알림 유무 확인
+        int exist_new_notice = new NoticeObj(user_id).count_notices();
 
         //오류확인
         Log.i("custom-home-log", USERINFO.getString("is_login", "로그인없음"));
