@@ -150,6 +150,15 @@ public class cmatching_detail extends AppCompatActivity {
                 }catch (Exception e){
                     Log.e("detailpagelog", e.getMessage());
                 }
+
+
+                //notice 추가
+                try{
+                    String result = new NoticeObj(user_id).sendToMSG(user_id+"님이 참가 신청했습니다.", str_creater_id);
+                    Log.e("detailpagelog", result);
+                }catch(Exception e){
+                    Log.e("detailpagelog", e.getMessage());
+                }
             }
         });
 

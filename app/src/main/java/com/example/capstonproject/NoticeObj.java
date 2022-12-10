@@ -49,7 +49,7 @@ public class NoticeObj {
             String result = callTask.execute("&a=1&myId=" + MYID).get();
             Log.e("notice-log", result);
             // 보낸사람id, 메세지, 보낸시간 묶음으로 받음.
-            String[] notice_list = result.split("/");
+            String[] notice_list = result.split("@");
 
             return notice_list;
         }catch(Exception e){

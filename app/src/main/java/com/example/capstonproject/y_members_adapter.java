@@ -78,7 +78,24 @@ public class y_members_adapter extends BaseAdapter {
                 }catch (Exception e){
                     Log.e("member-adapter", e.getMessage());
                 }
+
+
+                //notice 추가 부분
+
+                try{
+                    yTask createrTask = new yTask("creater");
+                    String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
+                    String result = new NoticeObj(member_id).sendToMSG(member_id+"님의 참가를 수락했습니다.", creater_id);
+                    Log.e("y_member_notice", result);
+                }catch(Exception e){
+                    Log.e("member-adapter", e.getMessage());
+                }
+
             }
+
+
+
+
         });
 
         
@@ -98,6 +115,16 @@ public class y_members_adapter extends BaseAdapter {
                         ct.startActivity(intent);
                     }
                 }catch (Exception e){
+                    Log.e("member-adapter", e.getMessage());
+                }
+
+                //notice 추가 부분
+                try{
+                    yTask createrTask = new yTask("creater");
+                    String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
+                    String result = new NoticeObj(member_id).sendToMSG(member_id+"님의 참가가 거절되었습니다.", creater_id);
+                    Log.e("y_member_notice", result);
+                }catch(Exception e){
                     Log.e("member-adapter", e.getMessage());
                 }
             }

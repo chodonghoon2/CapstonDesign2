@@ -15,21 +15,20 @@ import com.google.android.material.navigation.NavigationBarView;
 public class amyinfo extends AppCompatActivity {
     TextView tv_name, tv_id, tv_sex, tv_tel, tv_major;
     Button reload_myinfo, btn_backtohome;
-    SharedPreferences USERINFO = getSharedPreferences("USERINFO",MODE_PRIVATE);
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amyinfo);
+        SharedPreferences USERINFO = getSharedPreferences("USERINFO",MODE_PRIVATE);
 
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_id = (TextView) findViewById(R.id.tv_id);
         tv_sex = (TextView) findViewById(R.id.tv_sex);
         tv_tel = (TextView) findViewById(R.id.tv_tel);
         tv_major = (TextView) findViewById(R.id.tv_major);
-        btn_backtohome = (Button) findViewById(R.id.btn_backtohome);
-        reload_myinfo = (Button) findViewById(R.id.reload_myinfo);
 
         tv_name.setText(USERINFO.getString("name", "이름없음"));
         tv_id.setText(USERINFO.getString("id", "id없음"));
