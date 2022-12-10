@@ -1,0 +1,67 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/itemlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="2">
+            <!--이름-->
+            <TextView
+                android:id="@+id/notice_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="메세지메세지메세지메세지메세지메세지메세지메세지메세지메세지메세지메세지메세지메세지"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+        <!--상태 메시지-->
+        <LinearLayout
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right" >
+
+
+            <TextView
+                android:id="@+id/send_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보낸 시간"
+                android:textSize="12sp"
+                android:textColor="#A34343"
+                android:maxLines="1"
+                android:layout_marginRight="30dp"/>
+
+            <TextView
+                android:id="@+id/send_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="send id"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000000"/>
+
+</LinearLayout>
