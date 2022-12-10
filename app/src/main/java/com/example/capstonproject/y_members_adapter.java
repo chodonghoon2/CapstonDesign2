@@ -66,7 +66,7 @@ public class y_members_adapter extends BaseAdapter {
                     //보낼 파라미터 = match_number, member_id
                     String result = accpetTask.execute("&a=1&match_number="+ match_number+"&member_id=" + member_id).get();
                     // 결과 = 참여성공, 참여실패
-                    Log.e("참여시도", result);
+                    Log.e("수락시도", result);
 
 
 
@@ -75,21 +75,23 @@ public class y_members_adapter extends BaseAdapter {
                         Intent intent = new Intent(ct, MainActivity.class);
                         ct.startActivity(intent);
                     }
+
+                    //notice 추가 부분
+
+                    try{
+                        yTask createrTask = new yTask("creater");
+                        String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
+                        String result2 = new NoticeObj(member_id).sendToMSG(member_id+"님의 참가를 수락했습니다.", creater_id);
+                        Log.e("y_member_notice", result2);
+                    }catch(Exception e){
+                        Log.e("member-adapter", e.getMessage());
+                    }
                 }catch (Exception e){
                     Log.e("member-adapter", e.getMessage());
                 }
 
 
-                //notice 추가 부분
 
-                try{
-                    yTask createrTask = new yTask("creater");
-                    String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
-                    String result = new NoticeObj(member_id).sendToMSG(member_id+"님의 참가를 수락했습니다.", creater_id);
-                    Log.e("y_member_notice", result);
-                }catch(Exception e){
-                    Log.e("member-adapter", e.getMessage());
-                }
 
             }
 
