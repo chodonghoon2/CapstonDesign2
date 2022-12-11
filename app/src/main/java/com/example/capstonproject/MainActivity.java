@@ -26,6 +26,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import kotlinx.coroutines.TimeoutKt;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,12 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         //처음화면
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
-        //새 알림 유무 확인
-        int exist_new_notice = new NoticeObj(user_id).count_notices();
 
-        if(exist_new_notice > 0){
 
-        }
 
         //오류확인
         Log.i("custom-home-log", USERINFO.getString("is_login", "로그인없음"));

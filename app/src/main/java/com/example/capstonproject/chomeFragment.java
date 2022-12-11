@@ -20,6 +20,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class chomeFragment extends Fragment {
     private RecyclerView mRecyclerView;
@@ -49,6 +51,29 @@ public class chomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
+        //새 알림 유무 확인
+        TimerTask ask_nocie = new TimerTask() {
+            @Override
+            public void run() {
+                Log.e("timer-task", "askaskaskask");
+
+                int exist_new_notice = new NoticeObj(id).count_notices();
+
+                if(exist_new_notice > 0) {
+                    Log.e("exist-new", "exist-new true");
+                    //플로팅버튼 빨갛게 동작
+
+
+                }else{
+                    //플로팅버튼 빨갛게 취소
+                    Log.e("exist-new", "exist-new false");
+                }
+            }
+        };
+
+        Timer timer = new Timer();
+        timer.schedule(ask_nocie, 0, 3000);
         //매칭정보 요청
         try{
             String request; //모든 매칭 정보 요청
