@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".chomeFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:src="@drawable/c_ic_notifications_24"
+        android:backgroundTint="@color/white"
+        android:layout_margin="16dp" />
+
     <RelativeLayout
         android:id="@+id/user_info"
         android:layout_width="match_parent"
