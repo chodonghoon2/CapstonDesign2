@@ -6,20 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".chomeFragment">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|top"
-        android:src="@drawable/c_ic_notifications_24"
-        android:backgroundTint="@color/white"
-        android:layout_margin="16dp" />
-
     <RelativeLayout
         android:id="@+id/user_info"
         android:layout_width="match_parent"
         android:layout_height="105dp"
         android:background="@color/black">
+
 
         <RelativeLayout
             android:id="@+id/rogo"
@@ -43,18 +35,27 @@
             android:layout_toRightOf="@id/rogo"
             android:layout_marginTop="20dp">
 
+            <ImageButton
+                android:id="@+id/Notice_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/user_id"
+                android:src="@drawable/c_ic_notifications_24"
+                android:layout_marginLeft="130dp"
+                android:backgroundTint="@color/white"/>
+
             <TextView
                 android:id="@+id/user_id"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:text="@string/userid"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_major"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_below="@id/user_id"
                 android:text="@string/user_major"
