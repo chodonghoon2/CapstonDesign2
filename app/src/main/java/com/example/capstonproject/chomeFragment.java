@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +33,7 @@ public class chomeFragment extends Fragment {
     String id, name, major;
     Button match_request_btn, all_match_list_btn, my_match_list_btn;
     Context ct;
+    FloatingActionButton fab;
 
     TextView  user_name, user_major;
     public chomeFragment(String id, String name, String major){
@@ -52,28 +56,7 @@ public class chomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        //새 알림 유무 확인
-        TimerTask ask_nocie = new TimerTask() {
-            @Override
-            public void run() {
-                Log.e("timer-task", "askaskaskask");
 
-                int exist_new_notice = new NoticeObj(id).count_notices();
-
-                if(exist_new_notice > 0) {
-                    Log.e("exist-new", "exist-new true");
-                    //플로팅버튼 빨갛게 동작
-
-
-                }else{
-                    //플로팅버튼 빨갛게 취소
-                    Log.e("exist-new", "exist-new false");
-                }
-            }
-        };
-
-        Timer timer = new Timer();
-        timer.schedule(ask_nocie, 0, 3000);
         //매칭정보 요청
         try{
             String request; //모든 매칭 정보 요청
@@ -96,11 +79,47 @@ public class chomeFragment extends Fragment {
         all_match_list_btn = (Button) view.findViewById(R.id.all_match_list_btn);
         my_match_list_btn = (Button) view.findViewById(R.id.my_match_list_btn);
         match_request_btn = (Button) view.findViewById(R.id.jangbi_btn);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
 
         user_name = (TextView) view.findViewById(R.id.user_id);
         user_name.setText(name);
         user_major = (TextView) view.findViewById(R.id.user_major);
         user_major.setText(major);
+
+
+        //새 알림 유무 확인
+        TimerTask ask_nocie = new TimerTask() {
+            @Override
+            public void run() {
+                Log.e("timer-task", "askaskaskask");
+
+                int exist_new_notice = new NoticeObj(id).count_notices();
+
+                if(exist_new_notice > 0) {
+                    Log.e("exist-new", "exist-new true");
+                    //플로팅버튼 빨갛게 동작
+                    fab.setBackgroundColor(Color.parseColor("#ff0000"));
+
+
+                }else{
+                    //플로팅버튼 빨갛게 취소
+                    Log.e("exist-new", "exist-new false");
+                    fab.setBackgroundColor(Color.parseColor("#000000"));
+                }
+            }
+        };
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ct, cNotice.class);
+                startActivity(intent);
+            }
+        });
+
+        Timer timer = new Timer();
+        timer.schedule(ask_nocie, 0, 3000);
+
 
 
 

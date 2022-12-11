@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new fab());
 
 
         //유저정보 스토리지
@@ -109,13 +107,7 @@ public class MainActivity extends AppCompatActivity {
         navigationBarView.bringToFront();
     }  //oncreate
 
-    class fab implements View.OnClickListener{
-        @Override
-        public void onClick(View view) {
-         Intent intent = new Intent(getApplicationContext(), cNotice.class);
-         startActivity(intent);
-        }
-    }
+
 
 
 
