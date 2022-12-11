@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +47,7 @@ public class y_members_adapter extends BaseAdapter {
         TextView member_name = (TextView) view.findViewById(R.id.member_name);
         TextView member_info = (TextView) view.findViewById(R.id.member_info);
         TextView member_phone = (TextView) view.findViewById(R.id.member_phone);
+        LinearLayout responseLayout = (LinearLayout) view.findViewById(R.id.responseLayout);
 
         ymatch_members member_item = members_list.get(position);
 
@@ -55,7 +57,10 @@ public class y_members_adapter extends BaseAdapter {
         member_info.setText(member_item.getMember_info());
         member_phone.setText(member_item.getMember_phone());
 
-        
+        if(member_id.equals("")){
+            responseLayout.setVisibility(View.GONE);
+        }
+
         //수락버튼 클릭시
         accept_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +71,7 @@ public class y_members_adapter extends BaseAdapter {
                     //보낼 파라미터 = match_number, member_id
                     String result = accpetTask.execute("&a=1&match_number="+ match_number+"&member_id=" + member_id).get();
                     // 결과 = 참여성공, 참여실패
-                    Log.e("수락시도", result);
+                    Log.e("참여시도", result);
 
 
 
@@ -75,32 +80,13 @@ public class y_members_adapter extends BaseAdapter {
                         Intent intent = new Intent(ct, MainActivity.class);
                         ct.startActivity(intent);
                     }
-
-                    //notice 추가 부분
-
-                    try{
-                        yTask createrTask = new yTask("creater");
-                        String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
-                        String result2 = new NoticeObj(creater_id).sendToMSG(member_id+"님의 참가를 수락되었습니다.", member_id);
-                        Log.e("y_member_notice", result2);
-                    }catch(Exception e){
-                        Log.e("member-adapter", e.getMessage());
-                    }
                 }catch (Exception e){
                     Log.e("member-adapter", e.getMessage());
                 }
-
-
-
-
             }
-
-
-
-
         });
 
-        
+
         //거절버튼 클릭시
         refuse_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,24 +95,14 @@ public class y_members_adapter extends BaseAdapter {
 
                     yTask refuseTask = new yTask("match_refuse");
                     //보낼 파라미터 = match_number, member_id
-                    String result = refuseTask.execute("&a=1&match_number=").get();
+                    String result = refuseTask.execute("&a=1&match_number=" + match_number + "&member_id=" + member_id ).get();
                     // 결과 = 거절성공, 거절실패
                     Log.e("참여거절시도", result);
-                    if(result.equals("거절성공")){
+                    if(result.equals("삭제성공")){
                         Intent intent = new Intent(ct, MainActivity.class);
                         ct.startActivity(intent);
                     }
                 }catch (Exception e){
-                    Log.e("member-adapter", e.getMessage());
-                }
-
-                //notice 추가 부분
-                try{
-                    yTask createrTask = new yTask("creater");
-                    String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
-                    String result = new NoticeObj(member_id).sendToMSG(member_id+"님의 참가가 거절되었습니다.", creater_id);
-                    Log.e("y_member_notice", result);
-                }catch(Exception e){
                     Log.e("member-adapter", e.getMessage());
                 }
             }

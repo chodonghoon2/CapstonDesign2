@@ -119,7 +119,7 @@ public class chomeFragment extends Fragment {
         });
 
         Timer timer = new Timer();
-        timer.schedule(ask_nocie, 0, 3000);
+        timer.schedule(ask_nocie, 0, 10000);
 
 
 
@@ -252,10 +252,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], false));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1], true));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], false));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1], true));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);

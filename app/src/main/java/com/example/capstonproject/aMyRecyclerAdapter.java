@@ -47,13 +47,12 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        Boolean my_match;
         String match_number;
         ImageView profile;
         TextView name;
         TextView message;
         LinearLayout itemlayout;
-        Button applybtn;
-        Button refusebtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -64,6 +63,7 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
         }
 
         void onBind(aFriendItem item){
+            my_match = item.getMy_match();
             match_number = item.getNumber();
             profile.setImageResource(item.getResourceId());
             name.setText(item.getName());
@@ -80,6 +80,7 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
 
                     Log.e("adapter custom", ""+match_number);
                     Intent intent = new Intent(context, cmatching_detail.class);
+                    intent.putExtra("is_myMatch", my_match);
                     intent.putExtra("match_number", ""+match_number);
                     context.startActivity(intent);
                 }

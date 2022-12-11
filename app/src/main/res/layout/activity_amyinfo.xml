@@ -59,8 +59,7 @@
                         android:id="@+id/tv_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textSize="25dp"
-                        android:text="aqwerqer"/>
+                        android:textSize="25dp"/>
 
                 </LinearLayout>
 
