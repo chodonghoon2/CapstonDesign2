@@ -81,7 +81,7 @@ public class y_members_adapter extends BaseAdapter {
                     try{
                         yTask createrTask = new yTask("creater");
                         String creater_id = createrTask.execute("&a=1&match_number=" + match_number).get();
-                        String result2 = new NoticeObj(member_id).sendToMSG(member_id+"님의 참가를 수락했습니다.", creater_id);
+                        String result2 = new NoticeObj(creater_id).sendToMSG(member_id+"님의 참가를 수락되었습니다.", member_id);
                         Log.e("y_member_notice", result2);
                     }catch(Exception e){
                         Log.e("member-adapter", e.getMessage());
