@@ -23,6 +23,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new fab());
 
 
         //유저정보 스토리지
@@ -107,7 +109,13 @@ public class MainActivity extends AppCompatActivity {
         navigationBarView.bringToFront();
     }  //oncreate
 
-
+    class fab implements View.OnClickListener{
+        @Override
+        public void onClick(View view) {
+         Intent intent = new Intent(getApplicationContext(), cNotice.class);
+         startActivity(intent);
+        }
+    }
 
 
 
@@ -146,9 +154,6 @@ public class MainActivity extends AppCompatActivity {
         }else if(id == R.id.setting_btn){
             Intent intent = getIntent();
             finish();
-            startActivity(intent);
-        }else if(id == R.id.Notice_btn) {
-            Intent intent = new Intent(getApplicationContext(), cNotice.class);
             startActivity(intent);
         }
 
