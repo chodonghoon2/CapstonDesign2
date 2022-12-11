@@ -37,7 +37,7 @@
             android:layout_toRightOf="@id/rogo">
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/user_id"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
@@ -52,7 +52,7 @@
                 android:id="@+id/user_major"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_below="@id/tv_name"
+                android:layout_below="@id/user_id"
                 android:text="@string/user_major"
                 android:textColor="@color/white"
                 android:textSize="15dp"
@@ -65,7 +65,7 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -77,9 +77,9 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_below="@+id/layout_title5"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -88,11 +88,42 @@
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="아이디 : "
+                        android:text="이름"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="30dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/layout_title5"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="아이디"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
@@ -102,7 +133,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="30dp"
-                        android:textStyle="bold"
                         android:textSize="30dp"/>
 
                 </LinearLayout>
@@ -110,9 +140,9 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_below="@+id/layout_title5"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -121,11 +151,10 @@
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="핸드폰 번호 : "
+                        android:text="핸드폰 번호"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
@@ -135,17 +164,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="30dp"
-                        android:textStyle="bold"
                         android:textSize="30dp"/>
-
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_below="@+id/layout_title3"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -157,7 +184,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="성별 : "
+                        android:text="성별"
                         android:textStyle="bold"
                         android:textSize="20dp"
                         />
@@ -166,7 +193,38 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="30dp"
-                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/layout_title6"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="학과"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_major"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
                         android:textSize="30dp"/>
 
                 </LinearLayout>
@@ -175,6 +233,6 @@
 
         </TableLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

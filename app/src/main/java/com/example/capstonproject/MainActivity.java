@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         //새 알림 유무 확인
         int exist_new_notice = new NoticeObj(user_id).count_notices();
 
+        if(exist_new_notice > 0){
+
+        }
+
         //오류확인
         Log.i("custom-home-log", USERINFO.getString("is_login", "로그인없음"));
         Log.i("custom-home-log", USERINFO.getString("id", "아이디없음"));

@@ -3,20 +3,27 @@ package com.example.capstonproject;
 import android.os.SystemClock;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class NoticeObj {
     String MYID;
+    Date now = new Date();
+    SimpleDateFormat format = new SimpleDateFormat("MM/dd");
+
+
     public NoticeObj(String MYID){
         this.MYID = MYID;
+
     }
 
     public String sendToMSG(String Msg, String SENDID){
-        String now;
         try{
+            Log.i("NoticeObjlog", format.format(now));
             yTask sendTask = new yTask("sendNotice");
-            String result = sendTask.execute("&a=1&sendId=" + MYID + "&recvId=" + SENDID + "&message=" + Msg + "&send_time=" + "").get();
+            String result = sendTask.execute("&a=1&sendId=" + MYID + "&recvId=" + SENDID + "&message=" + Msg + "&send_time=" + format.format(now)).get();
             Log.e("notice-log", result);
 
             if(result.equals("보내기성공")){
@@ -49,7 +56,7 @@ public class NoticeObj {
             String result = callTask.execute("&a=1&myId=" + MYID).get();
             Log.e("notice-log", result);
             // 보낸사람id, 메세지, 보낸시간 묶음으로 받음.
-            String[] notice_list = result.split("/");
+            String[] notice_list = result.split("@");
 
             return notice_list;
         }catch(Exception e){
