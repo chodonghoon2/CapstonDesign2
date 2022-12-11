@@ -28,8 +28,6 @@ public class amyinfo extends AppCompatActivity {
         tv_sex = (TextView) findViewById(R.id.tv_sex);
         tv_tel = (TextView) findViewById(R.id.tv_tel);
         tv_major = (TextView) findViewById(R.id.tv_major);
-        btn_backtohome = (Button) findViewById(R.id.btn_backtohome);
-        reload_myinfo = (Button) findViewById(R.id.reload_myinfo);
 
         tv_name.setText(USERINFO.getString("name", "이름없음"));
         tv_id.setText(USERINFO.getString("id", "id없음"));
