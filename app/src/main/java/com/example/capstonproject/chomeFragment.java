@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,7 +34,7 @@ public class chomeFragment extends Fragment {
     String id, name, major;
     Button match_request_btn, all_match_list_btn, my_match_list_btn;
     Context ct;
-    FloatingActionButton fab;
+    ImageButton notice_btn;
 
     TextView  user_name, user_major;
     public chomeFragment(String id, String name, String major){
@@ -79,7 +80,7 @@ public class chomeFragment extends Fragment {
         all_match_list_btn = (Button) view.findViewById(R.id.all_match_list_btn);
         my_match_list_btn = (Button) view.findViewById(R.id.my_match_list_btn);
         match_request_btn = (Button) view.findViewById(R.id.jangbi_btn);
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        notice_btn = (ImageButton) view.findViewById(R.id.Notice_btn);
 
         user_name = (TextView) view.findViewById(R.id.user_id);
         user_name.setText(name);
@@ -98,18 +99,18 @@ public class chomeFragment extends Fragment {
                 if(exist_new_notice > 0) {
                     Log.e("exist-new", "exist-new true");
                     //플로팅버튼 빨갛게 동작
-                    fab.setBackgroundColor(Color.parseColor("#ff0000"));
+                    notice_btn.setImageResource(R.drawable.y_ic_notifications_24);
 
 
                 }else{
                     //플로팅버튼 빨갛게 취소
                     Log.e("exist-new", "exist-new false");
-                    fab.setBackgroundColor(Color.parseColor("#000000"));
+                    notice_btn.setImageResource(R.drawable.c_ic_notifications_24);
                 }
             }
         };
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        notice_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ct, cNotice.class);

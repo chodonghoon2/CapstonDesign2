@@ -14,7 +14,6 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class amyinfo extends AppCompatActivity {
     TextView tv_name, tv_id, tv_sex, tv_tel, tv_major;
-    Button reload_myinfo, btn_backtohome;
 
 
 
@@ -37,23 +36,7 @@ public class amyinfo extends AppCompatActivity {
         tv_major.setText(USERINFO.getString("major", "학과없음"));
 
 
-        reload_myinfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = getIntent();
-                finish();
-                startActivity(intent);
-            }
-        });
 
-        btn_backtohome.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
 

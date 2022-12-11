@@ -42,7 +42,7 @@
                 android:layout_toRightOf="@+id/user_id"
                 android:src="@drawable/c_ic_notifications_24"
                 android:layout_marginLeft="130dp"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/black"/>
 
             <TextView
                 android:id="@+id/user_id"
